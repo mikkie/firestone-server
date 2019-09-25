@@ -9,6 +9,8 @@ tags:
     description: Simple example endpoints
   - name: Specification
     description: The swagger API specification
+  - name: Users
+    description: system user information
 
 consumes:
   - application/json
@@ -26,6 +28,19 @@ definitions:
       name:
         type: string
         example: no_stress
+  UserBody:
+    type: object
+    title: user
+    required:
+      - username
+      - password
+    properties:
+      username:
+        type: string
+        example: aqua
+      password:
+        type: string
+        example: '123456'  
 
 paths:
   /examples:
@@ -66,6 +81,22 @@ paths:
           description: Return the example with the specified id
         404:
           description: Example not found
+
+  /users/login:
+    post:
+      tags:
+        - Users
+      description: login system 
+      parameters:
+        - name: user
+          in: body
+          required: true
+          description: The login info
+          schema: 
+            $ref: "#/definitions/UserBody"
+      responses:
+        200:
+          description: Return the login result
 
   /spec:
     get:
