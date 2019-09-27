@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser';
 import swaggerify from './swagger';
 
 import l from './logger';
+import { connectDB } from '../api/models';
 
 const app = new Express();
 
@@ -27,9 +28,12 @@ export default class ExpressServer {
     return this;
   }
 
+
   listen(port = process.env.PORT) {
-    const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
-    http.createServer(app).listen(port, welcome(port));
+    connectDB().then(async ()=> {
+      const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
+      http.createServer(app).listen(port, welcome(port));
+    });
     return app;
   }
 }
