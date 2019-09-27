@@ -1,7 +1,5 @@
 import l from '../../common/logger';
-// import db from './users.db.service';
 import models from '../models'
-import { model } from 'mongoose';
 
 class UsersService {
     login(username, password) {

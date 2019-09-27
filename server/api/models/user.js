@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import l from '../../common/logger';
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -15,6 +16,7 @@ userSchema.statics.findByLogin = async function (username, password) {
         username: username,
         password: password
     });
+    l.info(`find the user ${username}`);
     return user;
 }
 

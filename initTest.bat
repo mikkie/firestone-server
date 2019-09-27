@@ -1,0 +1,1 @@
+mongo 127.0.0.1/firestone-test "c:/aqua/firestone-server/initTestData.js"

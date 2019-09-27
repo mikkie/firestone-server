@@ -1,3 +1,3 @@
-import dotenv from 'dotenv';
+import customEnv from 'custom-env';
 
-dotenv.config();
+customEnv.env(true);
