@@ -6,7 +6,7 @@ export class Controller {
           .login(req.body.username, req.body.password)
           .then(r => {
             if (r) res.json(r);
-            else res.status(404).end();
+            else res.json({"error" : "login failed"});
           });
       }
 }
