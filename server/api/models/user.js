@@ -8,6 +8,12 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String
+    },
+    access_token: {
+        type: String
+    },
+    expired_date: {
+        type: Date
     }
 });
 

@@ -12,7 +12,6 @@ describe('Users', () => {
     .then(r => {
       expect(r.body)
         .to.be.an.an('object')
-        .that.has.property('username')
-        .equal('aqua');
+        .that.has.property('id')
     }));
 });
