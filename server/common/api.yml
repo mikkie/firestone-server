@@ -97,6 +97,21 @@ paths:
       responses:
         200:
           description: Return the login result
+  
+  /users/auth:
+    get:
+      tags:
+        - Users
+      description: auth user
+      parameters:
+        - name: accesstoken
+          in: header
+          required: true
+          description: The auth info
+          type: string
+      responses:
+        200:
+          description: Return the auth result  
 
   /spec:
     get:

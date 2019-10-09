@@ -9,5 +9,12 @@ export class Controller {
             else res.json({"error" : "login failed"});
           });
       }
+    auth(req, res){
+       UsersService.auth(req.headers.accesstoken).then(r => {
+          if(r) res.json(r);
+          else res.json({"error" : "auth failed"});
+       });
+    }  
+
 }
 export default new Controller();

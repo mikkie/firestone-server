@@ -16,7 +16,7 @@ class UsersService {
                         r.save().then(()=>{
                             resolve({
                                 id: r._id,
-                                access_token: res,
+                                access_token: Buffer.from(r._id + ':' + res).toString('base64'),
                                 expired_date: r.expired_date
                             });
                         });
@@ -41,6 +41,25 @@ class UsersService {
                 }
             })
         })
+    }
+
+    async auth(access_token){
+        let buff = new Buffer(access_token, 'base64');
+        let text = buff.toString('utf-8');
+        let id = text.split(':')[0];
+        let token = text.split(':')[1];
+        return new Promise((resolve, reject) => {
+            models.User.findById(id).then(r => {
+                if(r && r.access_token == token && Date.now() < r.expired_date){
+                    l.info(`user auth success: id = ${id}, access_token = ${token}`);
+                    resolve(r)
+                }
+                else{
+                    l.warn(`user auth error: id = ${id}, access_token = ${token}`);
+                    resolve(null)
+                }
+            });
+        });
     }
 }
 

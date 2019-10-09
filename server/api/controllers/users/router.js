@@ -3,4 +3,5 @@ import controller from './controller';
 
 export default express
   .Router()
-  .post('/login', controller.login);
+  .post('/login', controller.login)
+  .get('/auth', controller.auth);
