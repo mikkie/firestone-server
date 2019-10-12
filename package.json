@@ -10,12 +10,14 @@
     "dev:debug": "nodemon server --exec babel-node --config .nodemonrc.json --inspect | pino-pretty",
     "test": "set NODE_ENV=testing&& install\\initTest&& mocha --require @babel/register --exit",
     "test:debug": "set NODE_ENV=testing&& install\\initTest&& mocha --require @babel/register --inspect-brk --exit",
+    "e2e": "set NODE_ENV=testing&& install\\initTest&& nodemon server --exec babel-node --config .nodemonrc.json | pino-pretty",
     "lint": "eslint -c .eslintrc.json {server,test}/**",
     "lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "custom-env": "^1.0.2",
     "express": "^4.17.1",
     "mongoose": "^5.7.1",

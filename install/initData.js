@@ -1,5 +1,31 @@
 db.createCollection('users');
 db.users.insert({
    username: "aqua",
-   password: "e10adc3949ba59abbe56e057f20f883e"
+   password: "e10adc3949ba59abbe56e057f20f883e",
+   _id: ObjectId("5d905db9fc84d3224b0eb59c")
 });
+db.configmocks.insert({
+    "maxBuyNum" : 3,
+    "ths_url" : "http://mncg.10jqka.com.cn/cgiwt/index/index",
+    "userId" : ObjectId("5d905db9fc84d3224b0eb59c")
+});
+db.mocktrades.insertMany([{
+    "code" : "300691",
+    "state" : "停止",
+    "result" : "无",
+    "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
+    "deleted" : false
+},{
+    _id: ObjectId("5da1800e87b64fb6f4c32503"),
+    "code" : "300692",
+    "state" : "停止",
+    "result" : "无",
+    "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
+    "deleted" : false
+},{
+    "code" : "300693",
+    "state" : "停止",
+    "result" : "无",
+    "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
+    "deleted" : false
+}]);

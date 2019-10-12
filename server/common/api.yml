@@ -11,6 +11,10 @@ tags:
     description: The swagger API specification
   - name: Users
     description: system user information
+  - name: ConfigMocks
+    description: mock trade configuration
+  - name: MockTrades
+    description: mock trade records
 
 consumes:
   - application/json
@@ -41,6 +45,42 @@ definitions:
       password:
         type: string
         example: '123456'  
+  configMockBody:
+    type: object
+    title: ConfigMock
+    required:
+      - accesstoken
+      - update
+    properties:
+      accesstoken:
+        type: string
+        example: NWQ5MDVkYjlmYzg0ZDMyMjRiMGViNTljOjE2Nzg0M2Q5ZDQ3ZGJlMGE2OWE4MWEzYjBjNDgwNmY1NDM5NmM5ZmY5YjU4OWExNTdkMTE3Y2FjOWQzYmMzMGU=
+      update:
+        type: object
+        example: {
+          maxBuyNum : 4        
+        } 
+  mockTradeBody:
+    type: object
+    title: MockTrade
+    required:
+      - accesstoken
+      - update
+    properties:
+      accesstoken:
+        type: string
+        example: NWQ5MDVkYjlmYzg0ZDMyMjRiMGViNTljOjE2Nzg0M2Q5ZDQ3ZGJlMGE2OWE4MWEzYjBjNDgwNmY1NDM5NmM5ZmY5YjU4OWExNTdkMTE3Y2FjOWQzYmMzMGU=
+      mocktradeid:
+        type: string
+        example: 5da1800e87b64fb6f4c32503
+      update:
+        type: object
+        example: {
+          deleted : true,
+          state: '启动',
+          result: '以19.24买入400股'
+        }
+              
 
 paths:
   /examples:
@@ -112,6 +152,70 @@ paths:
       responses:
         200:
           description: Return the auth result  
+
+  /configmock/{accesstoken}:
+    get:
+      tags:
+        - ConfigMocks
+      description: get user mock trade config
+      parameters:
+        - name: accesstoken
+          in: path
+          required: true
+          x-example: NWQ5MDVkYjlmYzg0ZDMyMjRiMGViNTljOjE2Nzg0M2Q5ZDQ3ZGJlMGE2OWE4MWEzYjBjNDgwNmY1NDM5NmM5ZmY5YjU4OWExNTdkMTE3Y2FjOWQzYmMzMGU=
+          description: The accesstoken of the ConfigMock to retrieve
+          type: string
+      responses:
+        200:
+          description: Return the ConfigMock with the specified accesstoken
+
+  /configmock:
+    post:
+      tags:
+        - ConfigMocks
+      description: save user mock trade config
+      parameters:
+        - name: postData
+          in: body
+          required: true
+          description: The postData of the ConfigMock
+          schema: 
+            $ref: "#/definitions/configMockBody"
+      responses:
+        200:
+          description: Return the updated new ConfigMock
+
+  /mocktrade/{accesstoken}:
+    get:
+      tags:
+        - MockTrades
+      description: get mock trade datas
+      parameters:
+        - name: accesstoken
+          in: path
+          required: true
+          description: the user accesstoken
+          x-example: NWQ5MDVkYjlmYzg0ZDMyMjRiMGViNTljOjE2Nzg0M2Q5ZDQ3ZGJlMGE2OWE4MWEzYjBjNDgwNmY1NDM5NmM5ZmY5YjU4OWExNTdkMTE3Y2FjOWQzYmMzMGU=
+          type: string
+      responses:
+        200:
+          description: Return the user mock trade records 
+  
+  /mocktrade:
+    post:
+      tags:
+        - MockTrades  
+      description: update mock trade 
+      parameters:
+        - name: postData 
+          in: body
+          required: true
+          description: the mocktrade update data
+          schema: 
+            $ref: "#/definitions/mockTradeBody"
+      responses:
+        200:
+          description: Return the updated mock trade      
 
   /spec:
     get:
