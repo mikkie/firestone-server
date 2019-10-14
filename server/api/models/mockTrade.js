@@ -6,10 +6,12 @@ const mockTradeSchema = new mongoose.Schema({
         type: String
     },
     state : {
-        type: String
+        type: String,
+        default: '停止'
     },
     result : {
-        type: String
+        type: String,
+        default: '无'
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId
@@ -20,6 +22,9 @@ const mockTradeSchema = new mongoose.Schema({
     deleted: {
         type: Boolean,
         default: false
+    },
+    params : {
+        type: Object
     }
 });
 

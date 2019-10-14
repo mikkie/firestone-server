@@ -17,6 +17,14 @@ export class MockTradeController{
             res.json({"error" : err ? err : 'failed to update mock trade'});
         });
     }
+
+    createMockTrade(req, res){
+        mockTradeService.createMockTrade(req.body.accesstoken, req.body.strategyId, req.body.params).then(r => {
+            r ? res.json(r) : res.json({});
+        }, err => {
+            res.json({"error" : err ? err : 'failed to create mock trade'});
+        });
+    }
 }
 
 export default new MockTradeController()

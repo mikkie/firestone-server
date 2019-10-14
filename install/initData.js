@@ -29,3 +29,31 @@ db.mocktrades.insertMany([{
     "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
     "deleted" : false
 }]);
+db.strategies.insertMany([{
+    "_id" : ObjectId("5da19b7d181fc3600c5544c2"),
+    "name" : "基础策略",
+    "description" : "",
+    "op" : "buy",
+    "url" : "Basic",
+    "parameters" : {
+        "code" : "",
+        "monitorTime" : {
+            "start" : "09:30",
+            "end" : "15:00"
+        },
+        "index_percent" : {
+            "low" : "-1.0",
+            "high" : "3.0"
+        },
+        "percent" : {
+            "low" : "-0.5",
+            "high" : "2.5"
+        }
+    }
+},{
+    "name" : "打板策略",
+    "description" : "",
+    "op" : "sell",
+    "url" : "",
+    "parameters" : {}
+}]);
