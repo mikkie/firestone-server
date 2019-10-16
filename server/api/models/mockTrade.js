@@ -17,7 +17,8 @@ const mockTradeSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId
     },
     strategyId: {
-        type: mongoose.Schema.Types.ObjectId
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Strategy'
     },
     deleted: {
         type: Boolean,
@@ -33,14 +34,14 @@ const mockTradeSchema = new mongoose.Schema({
 });
 
 mockTradeSchema.statics.findByUserId = async function (userId) {
-    l.info(`find the mockTrade ${userId}`);
+    l.info(`find the mockTrade of user ${userId}`);
     let now = new Date();
     let startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     return this.find({
         userId: mongoose.Types.ObjectId(userId),
         createDate: {$gte: startOfToday},
         deleted: false
-    });
+    }).populate('strategyId');
 }
 
 const mockTrade = mongoose.model('MockTrade', mockTradeSchema);

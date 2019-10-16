@@ -7,7 +7,7 @@ export class StrategyController{
             if(r) res.json(r);
             else res.json([]);
         }, err => {
-            res.json({"error" : err ? err : "failed to query strategies"});
+            res.json({"error" : err ? err.toString() : "failed to query strategies"});
         });
     }
 
@@ -16,7 +16,7 @@ export class StrategyController{
             if(r) res.json(r);
             else res.json({});
         }, err => {
-            res.json({"error" : err ? err : `failed to query the strategy by Id ${req.params.strategyId}`});
+            res.json({"error" : err ? err.toString() : `failed to query the strategy by Id ${req.params.strategyId}`});
         });
     }
 

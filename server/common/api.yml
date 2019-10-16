@@ -67,6 +67,7 @@ definitions:
     title: MockTrade
     required:
       - accesstoken
+      - mocktradeid
       - update
     properties:
       accesstoken:
@@ -80,7 +81,21 @@ definitions:
         example: {
           deleted : true,
           state: '启动',
-          result: '以19.24买入400股'
+          result: '以19.24买入400股',
+          params: {
+            monitorTime : {
+              start : "09:30",
+              end : "15:00"
+            },
+            index_percent : {
+              low : -1.5,
+              high : 3.0
+            },
+            percent : {
+              low : -2.0,
+              high : 3.0
+            }
+          }
         }
 
   newMockTrade:

@@ -7,7 +7,7 @@ export class ConfigMockController{
             if(r) res.json(r);
             else res.json({});
         }, (err) => {
-            res.json({error : err ? err: 'get config failed'});
+            res.json({error : err ? err.toString(): 'get config failed'});
         });
     }
 
@@ -21,11 +21,11 @@ export class ConfigMockController{
                     if(config) res.json(config)
                     else res.json({});
                 }, (err) => {
-                    res.json({error : err ? err : 'create config failed'});
+                    res.json({error : err ? err.toString() : 'create config failed'});
                 });
             }   
         }, (err) => {
-            res.json({error : err ? err : 'update config failed'});
+            res.json({error : err ? err.toString() : 'update config failed'});
         });
     }
 

@@ -6,7 +6,7 @@ export class MockTradeController{
         mockTradeService.queryMockTradesByUser(req.params.accesstoken).then(r => {
             r ? res.json(r) : res.json([]);
         }, err => {
-            res.json({"error" : err ? err : 'failed to query mock trade'});
+            res.json({"error" : err ? err.toString() : 'failed to query mock trade'});
         });
     }
 
@@ -14,7 +14,7 @@ export class MockTradeController{
         mockTradeService.updateMockTrade(req.body.accesstoken, req.body.mocktradeid, req.body.update).then(r => {
             r ? res.json(r) : res.json({});
         }, err => {
-            res.json({"error" : err ? err : 'failed to update mock trade'});
+            res.json({"error" : err ? err.toString() : 'failed to update mock trade'});
         });
     }
 
@@ -22,7 +22,7 @@ export class MockTradeController{
         mockTradeService.createMockTrade(req.body.accesstoken, req.body.strategyId, req.body.params).then(r => {
             r ? res.json(r) : res.json({});
         }, err => {
-            res.json({"error" : err ? err : 'failed to create mock trade'});
+            res.json({"error" : err ? err.toString() : 'failed to create mock trade'});
         });
     }
 }
