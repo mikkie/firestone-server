@@ -23,6 +23,10 @@ const mockTradeSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    createDate: {
+        type: Date,
+        default: Date.now()
+    },
     params : {
         type: Object
     }
@@ -30,8 +34,11 @@ const mockTradeSchema = new mongoose.Schema({
 
 mockTradeSchema.statics.findByUserId = async function (userId) {
     l.info(`find the mockTrade ${userId}`);
+    let now = new Date();
+    let startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     return this.find({
         userId: mongoose.Types.ObjectId(userId),
+        createDate: {$gte: startOfToday},
         deleted: false
     });
 }
