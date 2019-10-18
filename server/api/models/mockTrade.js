@@ -44,6 +44,23 @@ mockTradeSchema.statics.findByUserId = async function (userId) {
     }).populate('strategyId');
 }
 
+mockTradeSchema.statics.findByUserIdAndDateAndCode = async function(userId, createdDate, code){
+    l.info(`find history mockTrade of user ${userId}, createDate = ${createdDate}, code = ${code}`);
+    let startDate = new Date(createdDate);
+    let endDate = new Date(createdDate);
+    endDate.setDate(startDate.getDate() + 1);
+    let cond = {
+        userId: mongoose.Types.ObjectId(userId),
+        createDate : {$gte: startDate, $lt: endDate},
+        deleted: false
+    };
+    if(code != null && code.length > 0){
+        cond.code = code;
+    }
+    return this.find(cond).populate('strategyId');
+}
+
+
 const mockTrade = mongoose.model('MockTrade', mockTradeSchema);
 
 export default mockTrade;

@@ -6,7 +6,15 @@ export class MockTradeController{
         mockTradeService.queryMockTradesByUser(req.params.accesstoken).then(r => {
             r ? res.json(r) : res.json([]);
         }, err => {
-            res.json({"error" : err ? err.toString() : 'failed to query mock trade'});
+            res.json({"error" : err ? err.toString() : 'failed to query mock trades'});
+        });
+    }
+
+    queryHistoryMockTrades(req, res){
+        mockTradeService.queryHistoryMockTrades(req.body.accesstoken, req.body.createdDate, req.body.code).then(r => {
+            r ? res.json(r) : res.json([]);
+        }, err => {
+            res.json({"error" : err ? err.toString() : 'failed to query history mock trades'});
         });
     }
 

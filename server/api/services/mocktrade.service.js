@@ -11,6 +11,12 @@ class MockTradeService {
     }
 
 
+    async queryHistoryMockTrades(accessToken, createdDate, code){
+        let userId = Utils.getUserIdFromAccessToken(accessToken);
+        return models.MockTrade.findByUserIdAndDateAndCode(userId, createdDate, code);
+    }
+
+
     async updateMockTrade(accessToken, mockTradeId, update){
         let userId = Utils.getUserIdFromAccessToken(accessToken);
         return models.MockTrade.findOneAndUpdate({userId : mongoose.Types.ObjectId(userId), _id : mongoose.Types.ObjectId(mockTradeId)}, update, {new : true})

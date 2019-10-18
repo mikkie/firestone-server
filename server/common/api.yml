@@ -97,6 +97,22 @@ definitions:
             }
           }
         }
+  historyMockTradeQueryBody:
+    type: object
+    title: HistoryMockTradeQuery
+    required:
+      - accesstoken
+      - createdDate
+    properties:
+      accesstoken:
+        type: string
+        example: NWQ5MDVkYjlmYzg0ZDMyMjRiMGViNTljOjE2Nzg0M2Q5ZDQ3ZGJlMGE2OWE4MWEzYjBjNDgwNmY1NDM5NmM5ZmY5YjU4OWExNTdkMTE3Y2FjOWQzYmMzMGU=
+      createdDate:
+        type: string
+        example: 2019-10-18
+      code:
+        type: string
+        example: ''  
 
   newMockTrade:
     type: object
@@ -248,7 +264,23 @@ paths:
           type: string
       responses:
         200:
-          description: Return the user mock trade records 
+          description: Return the user mock trade records
+
+  /mocktrade/history:
+    post:
+      tags:
+        - MockTrades
+      description: get history mock trade datas
+      parameters:
+        - name: postData
+          in: body
+          required: true
+          description: history mocktrades query parameters
+          schema: 
+            $ref: "#/definitions/historyMockTradeQueryBody"
+      responses:
+        200:
+          description: Return the history mock trade records         
   
   /mocktrade:
     post:

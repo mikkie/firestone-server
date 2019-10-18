@@ -6,3 +6,4 @@ export default express
   .post('/', controller.updateMockTrade)
   .post('/new', controller.createMockTrade)
   .get('/:accesstoken', controller.queryUserMockTrades)
+  .post('/history', controller.queryHistoryMockTrades)
