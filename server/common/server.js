@@ -4,10 +4,12 @@ import * as bodyParser from 'body-parser';
 import * as http from 'http';
 import * as os from 'os';
 import cookieParser from 'cookie-parser';
+import cors from 'cors'
 
 import swaggerify from './swagger';
 
 import l from './logger';
+import { connectDB } from '../api/models';
 
 const app = new Express();
 
@@ -19,6 +21,7 @@ export default class ExpressServer {
     app.use(bodyParser.urlencoded({ extended: true, limit: process.env.REQUEST_LIMIT || '100kb' }));
     app.use(cookieParser(process.env.SESSION_SECRET));
     app.use(Express.static(`${root}/public`));
+    app.use(cors());
   }
 
   router(routes) {
@@ -27,9 +30,12 @@ export default class ExpressServer {
     return this;
   }
 
+
   listen(port = process.env.PORT) {
-    const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
-    http.createServer(app).listen(port, welcome(port));
+    connectDB().then(async ()=> {
+      const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
+      http.createServer(app).listen(port, welcome(port));
+    });
     return app;
   }
 }
