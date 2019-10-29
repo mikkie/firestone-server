@@ -8,6 +8,15 @@ const configMockSchema = new mongoose.Schema({
     ths_url: {
         type: String
     },
+    cookie: {
+        type: String
+    },
+    gdzh: {
+        type: String
+    },
+    sh_gdzh: {
+        type: String
+    },
     userId: {
         type: mongoose.Schema.Types.ObjectId
     }
