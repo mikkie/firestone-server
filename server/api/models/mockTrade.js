@@ -7,7 +7,7 @@ const mockTradeSchema = new mongoose.Schema({
     },
     state : {
         type: String,
-        default: '停止'
+        default: '未开始'
     },
     result : {
         type: String,
