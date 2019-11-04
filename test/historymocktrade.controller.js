@@ -13,7 +13,7 @@ describe('history mocktrade', () => {
             expect(r.body)
                 .to.be.an.an('array')
             assert.equal(r.body[0].deleted, false);
-            assert.equal(r.body[0].state, '停止');
+            assert.equal(r.body[0].state, '未开始');
             assert.equal(r.body[0].code, '300694');
         })
     );

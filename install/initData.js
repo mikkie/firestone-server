@@ -42,7 +42,7 @@ db.strategies.insertMany([{
 }]);
 db.mocktrades.insertMany([{
     "code" : "300691",
-    "state" : "停止",
+    "state" : "未开始",
     "result" : "无",
     "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
     "strategyId" : ObjectId("5da19b7d181fc3600c5544c2"),
@@ -66,7 +66,7 @@ db.mocktrades.insertMany([{
 },{
     _id: ObjectId("5da1800e87b64fb6f4c32503"),
     "code" : "300692",
-    "state" : "停止",
+    "state" : "未开始",
     "result" : "无",
     "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
     "strategyId" : ObjectId("5da19b7d181fc3600c5544c2"),
@@ -89,7 +89,7 @@ db.mocktrades.insertMany([{
     }
 },{
     "code" : "300693",
-    "state" : "停止",
+    "state" : "已完成",
     "result" : "无",
     "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
     "strategyId" : ObjectId("5da19b7d181fc3600c5544c2"),
@@ -112,7 +112,7 @@ db.mocktrades.insertMany([{
     }
 },{
     "code" : "300694",
-    "state" : "停止",
+    "state" : "未开始",
     "result" : "无",
     "userId" : ObjectId("5d905db9fc84d3224b0eb59c"),
     "strategyId" : ObjectId("5da19b7d181fc3600c5544c2"),
