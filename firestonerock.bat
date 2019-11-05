@@ -1,5 +1,4 @@
 @echo off
-cd %FR_ENG_HOME%
 set TRADEID=%1
 set CODES=
 shift
@@ -11,7 +10,5 @@ goto loop1
 :after_loop
 rem echo %CODES%
 rem echo %TRADEID% 
-pipenv run firestone %CODES% --hours 13 14 17 --minutes * * * -v&
-pipenv run firerock %TRADEID% -m --hours 13 14 17 --minutes * * * -v
-rem start pipenv run firestone %CODES% -v&
-rem start pipenv run firerock %TRADEID% -m -v
+start %cd%\shell\runfirestone.bat %CODES%
+start %cd%\shell\runfirerock.bat %TRADEID%
