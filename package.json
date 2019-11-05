@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "pino": "^5.13.1",
+    "pino-tee": "^0.2.2",
     "swagger-express-middleware": "^2.0.2"
   },
   "devDependencies": {
