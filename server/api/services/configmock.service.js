@@ -12,6 +12,7 @@ class ConfigMockService {
 
     async saveConfig(accessToken, update){
         let userId = Utils.getUserIdFromAccessToken(accessToken);
+        l.info(`userId = ${userId}, update config = ${JSON.stringify(update)}`);
         return models.ConfigMock.findOneAndUpdate({userId : mongoose.Types.ObjectId(userId)}, update, {new : true})
     }
 
@@ -28,7 +29,7 @@ class ConfigMockService {
             initConfig[k] = update[k];
         }
         let configMock = new models.ConfigMock(initConfig);
-        l.info('save the mockcongig ' + JSON.stringify(initConfig));
+        l.info(`userId = ${userId} create config = ${configMock}`);
         return configMock.save();
     }
 }

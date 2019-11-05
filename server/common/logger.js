@@ -6,7 +6,7 @@ const logThrough = new stream.PassThrough();
 
 const l = pino({
   name: process.env.APP_ID,
-  level: process.env.LOG_LEVEL,
+  level: process.env.LOG_LEVEL
 }, logThrough);
 
 const cwd = process.cwd();
@@ -20,6 +20,8 @@ const child = child_process.spawn(process.execPath, [
   'error', `${logPath}/error.log`,
   'fatal', `${logPath}/fatal.log`
 ], {cwd, env});
+
+child.unref();
 
 logThrough.pipe(child.stdin);
 logThrough.pipe(process.stdout);

@@ -9,12 +9,12 @@ class FireStoneRockService{
     }
 
     async createNewFirerock(codes, tradeId){
-        let msg = `get the firerock request code=${codes}, tradeId=${tradeId}`;
+        let msg = `start the firestonerock service code=${codes}, tradeId=${tradeId}`;
         l.info(msg);
         this.exec(`firestonerock ${tradeId} ${codes.join(' ')}`);
         return new Promise((resolve, reject) => {
             resolve({'success' : msg});
-        })
+        });
     }
 
 }
