@@ -5,6 +5,9 @@ import * as http from 'http';
 import * as os from 'os';
 import cookieParser from 'cookie-parser';
 import cors from 'cors'
+import schedule from 'node-schedule'
+import child_process from 'child_process';
+import util from 'util'
 
 import swaggerify from './swagger';
 
@@ -35,6 +38,11 @@ export default class ExpressServer {
     connectDB().then(async ()=> {
       const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
       http.createServer(app).listen(port, welcome(port));
+      schedule.scheduleJob('0 0 9 * * 1-5', function(){
+        let exec = util.promisify(child_process.exec)
+        exec('start shell\\runfirestone');
+        l.info('start the firestone service');
+      });
     });
     return app;
   }
