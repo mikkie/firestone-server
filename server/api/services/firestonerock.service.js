@@ -11,7 +11,7 @@ class FireStoneRockService{
     async createNewFirerock(codes, tradeId){
         let msg = `start the firestonerock service code=${codes}, tradeId=${tradeId}`;
         l.info(msg);
-        this.exec(`start shell\\runfirerock ${tradeId}`);
+        this.exec(`shell\\runfirerock ${tradeId}`);
         return new Promise((resolve, reject) => {
             resolve({'success' : msg});
         });

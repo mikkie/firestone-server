@@ -40,7 +40,7 @@ export default class ExpressServer {
       http.createServer(app).listen(port, welcome(port));
       schedule.scheduleJob('0 0 9 * * 1-5', function(){
         let exec = util.promisify(child_process.exec)
-        exec('start shell\\runfirestone');
+        exec('shell\\runfirestone');
         l.info('start the firestone service');
       });
     });
