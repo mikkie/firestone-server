@@ -17,6 +17,8 @@ tags:
     description: mock trade records
   - name: Strategy
     description: the trade strategy
+  - name: Firestonerock
+    description: the firestone & firerock service
 
 consumes:
   - application/json
@@ -144,7 +146,24 @@ definitions:
             low : -2.0,
             high : 3.0
           }
-        }      
+        }  
+
+  fireStoneRock:
+    type: object
+    title: FireStoneRock
+    required:
+      - codes
+      - tradeId
+    properties:
+      codes:
+        type: array
+        items:
+          type: string
+        example: ['000993','000001']
+      tradeId:
+        type: string
+        example: 5da95370b8b19f94f11fce95
+        
               
 
 paths:
@@ -338,7 +357,25 @@ paths:
       description: get trade strategy by id
       responses:
         200:
-          description: return strategy        
+          description: return strategy  
+
+
+  /firestonerock:
+    post:
+      tags:
+        - Firestonerock  
+      description: start new Firestone & Firerock service 
+      parameters:
+        - name: newData 
+          in: body
+          required: true
+          description: the parameters
+          schema: 
+            $ref: "#/definitions/fireStoneRock"
+      responses:
+        200:
+          description: Return the Firestone & Firerock service created result      
+
 
   /spec:
     get:

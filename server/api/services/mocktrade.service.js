@@ -19,6 +19,7 @@ class MockTradeService {
 
     async updateMockTrade(accessToken, mockTradeId, update){
         let userId = Utils.getUserIdFromAccessToken(accessToken);
+        l.info(`userId = ${userId}, update mockTradeId = ${mockTradeId} with update = ${JSON.stringify(update)}`);
         return models.MockTrade.findOneAndUpdate({userId : mongoose.Types.ObjectId(userId), _id : mongoose.Types.ObjectId(mockTradeId)}, update, {new : true})
     }
 
@@ -30,6 +31,7 @@ class MockTradeService {
             strategyId : mongoose.Types.ObjectId(strategyId),
             params : params
         });
+        l.info(`userId = ${userId} create mock trade = ${mockTrade}`);
         return mockTrade.save();
     }
 }
