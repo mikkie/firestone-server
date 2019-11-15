@@ -11,6 +11,9 @@ const configMockSchema = new mongoose.Schema({
     cookie: {
         type: String
     },
+    username: {
+        type: String
+    },
     gdzh: {
         type: String
     },
