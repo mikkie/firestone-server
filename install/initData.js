@@ -37,11 +37,31 @@ db.strategies.insertMany([{
         "volume" : 100
     }
 },{
-    "name" : "打板策略",
-    "description" : "",
-    "op" : "sell",
-    "url" : "",
-    "parameters" : {}
+    "_id" : ObjectId("5da19b7d181fc3600c5544c3"),
+    "name" : "异动拉升",
+    "description" : "在<i>监控时间</i>范围内,当<i>大盘涨幅</i>处于指定范围，并且当前<i>个股涨幅</i>处于指定范围，在<i>涨速时间</i>内，<i>涨幅拉升达</i>到预期值则买入股票",
+    "op" : "buy",
+    "url" : "Ydls",
+    "parameters" : {
+        "code" : "",
+        "monitorTime" : {
+            "start" : "09:30",
+            "end" : "14:30"
+        },
+        "index_percent" : {
+            "low" : "-1.0",
+            "high" : "3.0"
+        },
+        "percent" : {
+            "low" : "-0.5",
+            "high" : "2.5"
+        },
+        "speed" : {
+            "time" : "2",
+            "percent" : "2"
+        },
+        "volume" : 100
+    }
 }]);
 db.mocktrades.insertMany([{
     "code" : "300691",
