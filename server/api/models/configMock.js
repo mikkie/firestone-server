@@ -5,6 +5,10 @@ const configMockSchema = new mongoose.Schema({
     maxBuyNum: {
         type: Number
     },
+    curBuyNum: {
+        type: Number,
+        default: 0
+    },
     ths_url: {
         type: String
     },

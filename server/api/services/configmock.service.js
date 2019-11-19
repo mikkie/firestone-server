@@ -16,6 +16,11 @@ class ConfigMockService {
         return models.ConfigMock.findOneAndUpdate({userId : mongoose.Types.ObjectId(userId)}, update, {new : true})
     }
 
+    async clearCurBuyNum(){
+        l.info('reset all mock config curBuyNum to 0');
+        return models.ConfigMock.updateMany({}, {$set: {curBuyNum: 0}})
+    }
+
     async createConfig(accessToken, update){
         let userId = Utils.getUserIdFromAccessToken(accessToken);
         if(!userId){

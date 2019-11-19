@@ -13,6 +13,7 @@ import swaggerify from './swagger';
 
 import l from './logger';
 import { connectDB } from '../api/models';
+import configMockService from '../api/services/configmock.service'
 
 const app = new Express();
 
@@ -34,7 +35,12 @@ export default class ExpressServer {
   }
 
 
-  startFirestone(){
+  init(){
+    configMockService.clearCurBuyNum().then(r => {
+      l.info('reset all mock config curBuyNum = 0, done');
+    }, (err) => {
+      l.error(`reset all mock config curBuyNum = 0, failed = ${err}`);
+    });
     let exec = util.promisify(child_process.exec)
     exec('shell\\runfirestone');
     l.info('start the firestone service');
@@ -46,10 +52,10 @@ export default class ExpressServer {
       const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
       http.createServer(app).listen(port, welcome(port));
       schedule.scheduleJob('0 0 9 ? * 1-5', () => {
-        this.startFirestone();
+        this.init();
       });
       if(new Date().getHours() >= 9){
-        this.startFirestone();
+        this.init();
       }
     });
     return app;
