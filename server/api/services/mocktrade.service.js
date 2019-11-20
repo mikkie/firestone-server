@@ -29,6 +29,7 @@ class MockTradeService {
             code : params.code,
             userId : mongoose.Types.ObjectId(userId),
             strategyId : mongoose.Types.ObjectId(strategyId),
+            createDate : Date.now(),
             params : params
         });
         l.info(`userId = ${userId} create mock trade = ${mockTrade}`);

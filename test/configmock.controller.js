@@ -24,5 +24,7 @@ describe('ConfigMock', () => {
     .to.be.an.an('object')
     .that.has.property('maxBuyNum');
     assert.equal(r.body.maxBuyNum,4);
+    expect(r.body).has.property('curBuyNum');
+    assert.equal(r.body.curBuyNum,0);
   }));
 });

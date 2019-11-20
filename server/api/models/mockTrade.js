@@ -25,8 +25,7 @@ const mockTradeSchema = new mongoose.Schema({
         default: false
     },
     createDate: {
-        type: Date,
-        default: Date.now()
+        type: Date
     },
     params : {
         type: Object
@@ -41,7 +40,7 @@ mockTradeSchema.statics.findByUserId = async function (userId) {
         userId: mongoose.Types.ObjectId(userId),
         createDate: {$gte: startOfToday},
         deleted: false
-    }).populate('strategyId');
+    }).sort({createDate : -1}).populate('strategyId');
 }
 
 mockTradeSchema.statics.findByUserIdAndDateAndCode = async function(userId, createdDate, code){
