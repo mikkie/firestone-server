@@ -1,1 +1,1 @@
-mongo 127.0.0.1/firestone --eval "db.dropDatabase(); db.getSiblingDB('firestone');" "c:/aqua/firestone-server/install/initData.js"
+mongo 127.0.0.1/firestone --eval "db.dropDatabase(); db.getSiblingDB('firestone');" "c:/aqua/firestone-server/install/init.js" && exit
