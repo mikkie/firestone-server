@@ -14,7 +14,7 @@ class ConfigMockService {
     createHeartBeatTimerIfNeed(accessToken) {
         let userId = Utils.getUserIdFromAccessToken(accessToken);
         if (this.heartBeatTimerMap[userId] == undefined) {
-            this.heartBeatTimerMap[userId] = schedule.scheduleJob('0 */10 * ? * 1-5', () => {
+            this.heartBeatTimerMap[userId] = schedule.scheduleJob('0 */10 5-15 ? * 1-5', () => {
                 models.ConfigMock.findByUserId(userId).then(r => {
                     if(r && r.cookie){
                         firestonerockService.start_heart_beat({cookie : r.cookie})
