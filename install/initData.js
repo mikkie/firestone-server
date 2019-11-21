@@ -59,7 +59,7 @@ db.strategies.insertMany([{
         "speed" : {
             "time" : "2",
             "percent" : "2",
-            "volume" : "300"
+            "amount" : "300"
         },
         "volume" : 100
     }
