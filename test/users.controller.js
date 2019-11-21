@@ -8,7 +8,7 @@ describe('Users', () => {
   let accesstoken = null
   it('should login success', () => request(Server)
   .post('/api/v1/users/login')
-  .send({ username: 'aqua', 'password': '123456' })
+  .send({ username: 'admin', 'password': '123456' })
   .expect('Content-Type', /json/)
   .then(r => {
     expect(r.body)
