@@ -49,7 +49,7 @@ export default class ExpressServer {
 
   listen(port = process.env.PORT) {
     connectDB().then(async ()=> {
-      const welcome = p => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
+      const welcome = p => () => l.info(`up and running in ${process.env.APP_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
       http.createServer(app).listen(port, welcome(port));
       schedule.scheduleJob('0 0 9 ? * 1-5', () => {
         this.init();

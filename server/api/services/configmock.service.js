@@ -40,7 +40,6 @@ class ConfigMockService {
     }
 
     async clearCurBuyNum() {
-        l.info('reset all mock config curBuyNum to 0');
         return models.ConfigMock.updateMany({}, { $set: { curBuyNum: 0 } })
     }
 
