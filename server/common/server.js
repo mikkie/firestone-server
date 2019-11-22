@@ -35,26 +35,31 @@ export default class ExpressServer {
   }
 
 
-  init(){
+  init() {
     configMockService.clearCurBuyNum().then(r => {
       l.info('reset all mock config curBuyNum = 0, done');
     }, (err) => {
       l.error(`reset all mock config curBuyNum = 0, failed = ${err}`);
     });
-    let exec = util.promisify(child_process.exec)
-    exec('shell\\runfirestone');
-    l.info('start the firestone service');
+    if (process.env.ENABLE_FIRESTONE === 'true') {
+      let exec = util.promisify(child_process.exec)
+      exec('shell\\runfirestone');
+      l.info('start the firestone service');
+    }
+    else {
+      l.warn('firestone is disable, ignore the firestone service');
+    }
   }
 
 
   listen(port = process.env.PORT) {
-    connectDB().then(async ()=> {
+    connectDB().then(async () => {
       const welcome = p => () => l.info(`up and running in ${process.env.APP_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
       http.createServer(app).listen(port, welcome(port));
       schedule.scheduleJob('0 0 9 ? * 1-5', () => {
         this.init();
       });
-      if(new Date().getHours() >= 9){
+      if (new Date().getHours() >= 9) {
         this.init();
       }
     });

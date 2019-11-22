@@ -11,7 +11,7 @@
     "dev:debug": "set NODE_ENV=development&& nodemon server --exec babel-node --config .nodemonrc.json --inspect | pino-pretty",
     "test": "set NODE_ENV=testing&& cd install && initTest && cd .. && mocha --require @babel/register --exit",
     "test:debug": "set NODE_ENV=testing&& cd install && initTest && cd .. && mocha --require @babel/register --inspect-brk --exit",
-    "e2e": "set NODE_ENV=testing&& install\\initTest&& nodemon server --exec babel-node --config .nodemonrc.json | pino-pretty",
+    "e2e": "set NODE_ENV=testing&& cd install && initTest && cd .. && nodemon server --exec babel-node --config .nodemonrc.json | pino-pretty",
     "lint": "eslint -c .eslintrc.json {server,test}/**",
     "lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"
   },
