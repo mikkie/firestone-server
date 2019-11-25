@@ -30,7 +30,7 @@ class FireStoneRockService {
     async createNewFirerock(codes, tradeId) {
         let msg = `start the firestonerock service code=${codes}, tradeId=${tradeId}`;
         l.info(msg);
-        if(processe.env.ENABLE_FIREROCK === 'true'){
+        if(process.env.ENABLE_FIREROCK === 'true'){
             this.exec(`shell\\runfirerock ${tradeId}`);
             return new Promise((resolve, reject) => {
                 resolve({ 'success': msg });
