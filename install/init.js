@@ -64,7 +64,7 @@ db.strategies.insertMany([{
         "volume" : 100
     }
 },{
-    "_id" : ObjectId("5da19b7d181fc3600c5544c2"),
+    "_id" : ObjectId("5da19b7d181fc3600c5544c4"),
     "name" : "基础策略",
     "description" : "在<i>监控时间</i>范围内,当<i>大盘涨幅</i>处于指定范围，并且当前<i>个股涨幅</i>处于指定范围，则卖出股票",
     "op" : "sell",
