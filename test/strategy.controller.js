@@ -11,7 +11,7 @@ describe('strategy', () => {
         .then(r => {
             expect(r.body)
                 .to.be.an.an('array')
-            assert.equal(r.body.length, 2);
+            assert.equal(r.body.length, 3);
         })
     );
     it('should get basic strategy', () => request(Server)

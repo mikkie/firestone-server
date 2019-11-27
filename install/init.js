@@ -22,6 +22,7 @@ db.strategies.insertMany([{
     "url" : "Basic",
     "parameters" : {
         "code" : "",
+        "executeDate" : "",
         "monitorTime" : {
             "start" : "09:30",
             "end" : "15:00"
@@ -44,6 +45,7 @@ db.strategies.insertMany([{
     "url" : "Ydls",
     "parameters" : {
         "code" : "",
+        "executeDate" : "",
         "monitorTime" : {
             "start" : "09:30",
             "end" : "14:30"
@@ -71,6 +73,7 @@ db.strategies.insertMany([{
     "url" : "Basic",
     "parameters" : {
         "code" : "",
+        "executeDate" : "",
         "monitorTime" : {
             "start" : "09:30",
             "end" : "15:00"
