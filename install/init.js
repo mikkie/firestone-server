@@ -35,7 +35,7 @@ db.strategies.insertMany([{
             "low" : "-0.5",
             "high" : "2.5"
         },
-        "volume" : 100
+        "volume" : 1000
     }
 },{
     "_id" : ObjectId("5da19b7d181fc3600c5544c3"),
@@ -63,7 +63,7 @@ db.strategies.insertMany([{
             "percent" : "2",
             "amount" : "300"
         },
-        "volume" : 100
+        "volume" : 1000
     }
 },{
     "_id" : ObjectId("5da19b7d181fc3600c5544c4"),
@@ -86,6 +86,6 @@ db.strategies.insertMany([{
             "low" : "-0.5",
             "high" : "2.5"
         },
-        "volume" : 100
+        "volume" : 1000
     }
 }]);
