@@ -86,6 +86,6 @@ db.strategies.insertMany([{
             "low" : "-0.5",
             "high" : "2.5"
         },
-        "volume" : 1000
+        "volume" : 100
     }
 }]);
