@@ -59,6 +59,9 @@ db.strategies.insertMany([{
             "high" : "2.5"
         },
         "speed" : {
+            "vibration" : "1.5",
+            "ratio_l" : "2",
+            "ratio_r" : "3",
             "time" : "2",
             "percent" : "2",
             "amount" : "300"
