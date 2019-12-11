@@ -51,21 +51,21 @@ db.strategies.insertMany([{
             "end" : "14:30"
         },
         "index_percent" : {
-            "low" : "-1.0",
-            "high" : "3.0"
+            "low" : "-0.3",
+            "high" : "1.5"
         },
         "percent" : {
-            "low" : "-0.5",
-            "high" : "2.5"
+            "low" : "-1",
+            "high" : "2.0"
         },
         "speed" : {
             "min_vibration" : "0.5",
-            "max_vibration" : "1.5",
+            "max_vibration" : "2.5",
             "upper_shadow" : "0.2",
             "ratio_l" : "2",
             "ratio_r" : "3",
             "time" : "2",
-            "amount" : "300"
+            "amount" : "500"
         },
         "volume" : 1000
     }
