@@ -59,7 +59,9 @@ db.strategies.insertMany([{
             "high" : "2.5"
         },
         "speed" : {
-            "vibration" : "1.5",
+            "min_vibration" : "0.5",
+            "max_vibration" : "1.5",
+            "upper_shadow" : "0.2",
             "ratio_l" : "2",
             "ratio_r" : "3",
             "time" : "2",
