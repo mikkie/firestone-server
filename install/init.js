@@ -70,9 +70,9 @@ db.strategies.insertMany([{
 },{
     "_id" : ObjectId("5da19b7d181fc3600c5544c4"),
     "name" : "基础策略",
-    "description" : "在<i>监控时间</i>范围内,当<i>大盘涨幅</i>处于指定范围，并且当前<i>个股涨幅</i>处于指定范围，则卖出股票",
+    "description" : "在<i>监控时间</i>范围内,动态止盈止损，另外<i>涨幅</i>低于强制<i>止损线</i>或<i>涨停</i>，强制卖出股票",
     "op" : "sell",
-    "url" : "Basic",
+    "url" : "BasicSell",
     "parameters" : {
         "code" : "",
         "executeDate" : "",
@@ -80,14 +80,15 @@ db.strategies.insertMany([{
             "start" : "09:30",
             "end" : "15:00"
         },
-        "index_percent" : {
-            "low" : "-1.0",
-            "high" : "3.0"
+        "hard_stop" : -4,
+        "sell_on_zt" : "1",
+        "soft_stop" : {
+            "hit_stop_limit" : 5,
+            "max_loss" : 2.5,
+            "max_index" : 2.0,
+            "ratio_stock" : 7,
+            "ratio_index" : 3
         },
-        "percent" : {
-            "low" : "-0.5",
-            "high" : "2.5"
-        },
-        "volume" : 100
+        "volume" : 1000
     }
 }]);
