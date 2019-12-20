@@ -59,7 +59,7 @@ db.strategies.insertMany([{
             "high" : "2.0"
         },
         "speed" : {
-            "lower_shadow" : "0.2",
+            "lower_shadow" : "0.25",
             "ratio_l" : "2",
             "ratio_r" : "3",
             "time" : "2",
