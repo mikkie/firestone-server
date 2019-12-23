@@ -32,8 +32,8 @@ db.strategies.insertMany([{
             "high" : "-0.7"
         },
         "percent" : {
-            "low" : "-4",
-            "high" : "-1"
+            "low" : "-6",
+            "high" : "-2"
         },
         "volume" : 1000
     }
