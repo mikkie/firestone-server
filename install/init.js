@@ -24,12 +24,12 @@ db.strategies.insertMany([{
         "code" : "",
         "executeDate" : "",
         "monitorTime" : {
-            "start" : "09:30",
+            "start" : "09:45",
             "end" : "15:00"
         },
         "index_percent" : {
             "low" : "-3.0",
-            "high" : "-0.5"
+            "high" : "-0.8"
         },
         "percent" : {
             "low" : "-4",
@@ -47,7 +47,7 @@ db.strategies.insertMany([{
         "code" : "",
         "executeDate" : "",
         "monitorTime" : {
-            "start" : "09:30",
+            "start" : "09:45",
             "end" : "14:30"
         },
         "index_percent" : {
@@ -70,7 +70,7 @@ db.strategies.insertMany([{
 },{
     "_id" : ObjectId("5da19b7d181fc3600c5544c4"),
     "name" : "基础策略",
-    "description" : "在<i>监控时间</i>范围内,动态止盈止损，另外<i>涨幅</i>低于强制<i>止损线</i>或<i>涨停</i>，强制卖出股票",
+    "description" : "在<i>监控时间</i>范围内,成本涨幅大于<i>起始点</i>开始动态止盈止损，另外<i>涨幅</i>低于强制<i>止损线</i>或<i>涨停</i>，强制卖出股票",
     "op" : "sell",
     "url" : "BasicSell",
     "parameters" : {
@@ -80,6 +80,8 @@ db.strategies.insertMany([{
             "start" : "09:30",
             "end" : "15:00"
         },
+        "cb" : "",
+        "start_line" : 0,
         "hard_stop" : -4,
         "sell_on_zt" : "1",
         "soft_stop" : {
