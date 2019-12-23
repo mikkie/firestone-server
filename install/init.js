@@ -29,7 +29,7 @@ db.strategies.insertMany([{
         },
         "index_percent" : {
             "low" : "-3.0",
-            "high" : "-0.8"
+            "high" : "-0.7"
         },
         "percent" : {
             "low" : "-4",
