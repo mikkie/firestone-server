@@ -37,9 +37,9 @@ export default class ExpressServer {
 
   init() {
     configMockService.clear().then(r => {
-      l.info('reset all mock config curBuyNum = 0, done');
+      l.info('reset all mock config curBuyNum = 0, monitor_concept = [] done');
     }, (err) => {
-      l.error(`reset all mock config curBuyNum = 0, failed = ${err}`);
+      l.error(`reset all mock config curBuyNum = 0, monitor_concept = [] failed = ${err}`);
     });
     if (process.env.ENABLE_FIRESTONE === 'true') {
       let exec = util.promisify(child_process.exec)
