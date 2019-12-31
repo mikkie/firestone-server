@@ -24,6 +24,9 @@ const configMockSchema = new mongoose.Schema({
     sh_gdzh: {
         type: String
     },
+    monitor_concept: {
+        type: Array
+    },
     userId: {
         type: mongoose.Schema.Types.ObjectId
     }

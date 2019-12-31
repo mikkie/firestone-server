@@ -12,6 +12,7 @@ db.configmocks.insert({
     "username" : "48039195",
     "gdzh" : "0098894246",
     "sh_gdzh" : "A474614369",
+    "monitor_concept" : [],
     "userId" : ObjectId("5d905db9fc84d3224b0eb59c")
 });
 db.strategies.insertMany([{

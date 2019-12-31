@@ -39,8 +39,8 @@ class ConfigMockService {
         return models.ConfigMock.findOneAndUpdate({ userId: mongoose.Types.ObjectId(userId) }, update, { new: true })
     }
 
-    async clearCurBuyNum() {
-        return models.ConfigMock.updateMany({}, { $set: { curBuyNum: 0 } })
+    async clear() {
+        return models.ConfigMock.updateMany({}, { $set: { curBuyNum: 0, monitor_concept : [] } })
     }
 
     async createConfig(accessToken, update) {

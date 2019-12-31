@@ -36,7 +36,7 @@ export default class ExpressServer {
 
 
   init() {
-    configMockService.clearCurBuyNum().then(r => {
+    configMockService.clear().then(r => {
       l.info('reset all mock config curBuyNum = 0, done');
     }, (err) => {
       l.error(`reset all mock config curBuyNum = 0, failed = ${err}`);
