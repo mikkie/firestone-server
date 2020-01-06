@@ -94,4 +94,20 @@ db.strategies.insertMany([{
         },
         "volume" : 1000
     }
+},{
+    "_id" : ObjectId("5da19b7d181fc3600c5544c5"),
+    "name" : "题材选股",
+    "description" : "根据实时热门概念排行选出股票进行监控",
+    "op" : "select",
+    "url" : "ConceptPick",
+    "parameters" : {
+        "code" : "题材选股",
+        "executeDate" : "",
+        "index_percent" : "1.00",
+        "company_count" : "500",
+        "stock_percent" : "9.90",
+        "top_concept" : "3",
+        "max_percent" : "5.00",
+        "strategyId" : "5da19b7d181fc3600c5544c3"
+    }
 }]);
