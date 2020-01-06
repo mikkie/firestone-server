@@ -101,7 +101,7 @@ db.strategies.insertMany([{
     "op" : "select",
     "url" : "ConceptPick",
     "parameters" : {
-        "code" : "题材选股",
+        "code" : "N/A",
         "executeDate" : "",
         "index_percent" : "1.00",
         "company_count" : "500",
