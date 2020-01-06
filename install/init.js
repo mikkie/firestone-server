@@ -108,6 +108,7 @@ db.strategies.insertMany([{
         "stock_percent" : "9.90",
         "top_concept" : "3",
         "max_percent" : "5.00",
+        "volume" : "1000",
         "strategyId" : "5da19b7d181fc3600c5544c3"
     }
 }]);
