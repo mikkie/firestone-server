@@ -104,6 +104,7 @@ db.strategies.insertMany([{
         "code" : "N/A",
         "executeDate" : "",
         "index_percent" : "1.00",
+        "concepts" : "",
         "company_count" : "500",
         "stock_percent" : "9.90",
         "top_concept" : "3",
