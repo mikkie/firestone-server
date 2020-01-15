@@ -66,7 +66,7 @@ db.strategies.insertMany([{
             "time" : "2",
             "amount" : "400"
         },
-        "volume" : 1000
+        "volume" : 20000
     }
 },{
     "_id" : ObjectId("5da19b7d181fc3600c5544c4"),
@@ -104,7 +104,7 @@ db.strategies.insertMany([{
         "code" : "N/A",
         "executeDate" : "",
         "monitorTime" : {
-            "start" : "09:30",
+            "start" : "09:35",
             "end" : "14:50"
         },
         "index_percent" : "1.00",
@@ -114,8 +114,8 @@ db.strategies.insertMany([{
         "top_concept" : "3",
         "max_concept" : "6",
         "monitor_count" : "5",
-        "max_percent" : "5.00",
-        "volume" : "10000",
+        "max_percent" : "3.00",
+        "volume" : "20000",
         "strategyId" : "5da19b7d181fc3600c5544c3"
     }
 }]);
