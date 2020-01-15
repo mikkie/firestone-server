@@ -48,23 +48,23 @@ db.strategies.insertMany([{
         "code" : "",
         "executeDate" : "",
         "monitorTime" : {
-            "start" : "10:00",
+            "start" : "09:40",
             "end" : "14:30"
         },
         "index_percent" : {
             "low" : "-0.3",
-            "high" : "1.5"
+            "high" : "3.0"
         },
         "percent" : {
-            "low" : "-1",
+            "low" : "0.5",
             "high" : "3.0"
         },
         "speed" : {
-            "lower_shadow" : "0.25",
+            "lower_shadow" : "1",
             "ratio_l" : "2",
             "ratio_r" : "3",
             "time" : "2",
-            "amount" : "500"
+            "amount" : "400"
         },
         "volume" : 1000
     }
