@@ -60,11 +60,11 @@ db.strategies.insertMany([{
             "high" : "3.0"
         },
         "speed" : {
-            "lower_shadow" : "1",
+            "upper_shadow" : "0.2",
             "ratio_l" : "2",
             "ratio_r" : "3",
             "time" : "2",
-            "amount" : "400"
+            "amount" : "500"
         },
         "volume" : 20000
     }
