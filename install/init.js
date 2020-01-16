@@ -57,7 +57,7 @@ db.strategies.insertMany([{
         },
         "percent" : {
             "low" : "0.5",
-            "high" : "3.0"
+            "high" : "2.5"
         },
         "speed" : {
             "upper_shadow" : "0.2",
@@ -115,7 +115,7 @@ db.strategies.insertMany([{
         "top_concept" : "3",
         "max_concept" : "6",
         "monitor_count" : "5",
-        "max_percent" : "3.00",
+        "max_percent" : "2.5",
         "volume" : "20000",
         "strategyId" : "5da19b7d181fc3600c5544c3"
     }
