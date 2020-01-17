@@ -113,7 +113,7 @@ db.strategies.insertMany([{
         "net_buy" : "0",
         "stock_percent" : "9.90",
         "top_concept" : "3",
-        "max_concept" : "6",
+        "max_concept" : "8",
         "monitor_count" : "5",
         "max_percent" : "2.5",
         "volume" : "20000",
