@@ -57,14 +57,14 @@ db.strategies.insertMany([{
         },
         "percent" : {
             "low" : "0.5",
-            "high" : "2.5"
+            "high" : "2.0"
         },
         "speed" : {
             "upper_shadow" : "0.2",
             "ratio_l" : "2",
             "ratio_r" : "3",
             "time" : "2",
-            "amount" : "500"
+            "amount" : "600"
         },
         "volume" : 20000
     }
