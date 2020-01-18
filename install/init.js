@@ -56,7 +56,7 @@ db.strategies.insertMany([{
             "high" : "3.0"
         },
         "percent" : {
-            "low" : "0.5",
+            "low" : "1",
             "high" : "2.0"
         },
         "speed" : {
