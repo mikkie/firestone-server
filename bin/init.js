@@ -52,7 +52,7 @@ db.strategies.insertMany([{
             "end" : "14:30"
         },
         "index_percent" : {
-            "low" : "0.0",
+            "low" : "-0.3",
             "high" : "3.0"
         },
         "percent" : {
@@ -67,7 +67,7 @@ db.strategies.insertMany([{
             "break_top" : "1.5",
             "time_2" : "2",
             "percent" : "0.5",
-            "amount" : "700"
+            "amount" : "600"
         },
         "volume" : 20000
     }
