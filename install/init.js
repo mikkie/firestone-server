@@ -48,7 +48,7 @@ db.strategies.insertMany([{
         "code" : "",
         "executeDate" : "",
         "monitorTime" : {
-            "start" : "09:35",
+            "start" : "09:30",
             "end" : "14:30"
         },
         "index_percent" : {
@@ -107,7 +107,7 @@ db.strategies.insertMany([{
         "code" : "N/A",
         "executeDate" : "",
         "monitorTime" : {
-            "start" : "09:35",
+            "start" : "09:30",
             "end" : "14:50"
         },
         "index_percent" : "0.80",
