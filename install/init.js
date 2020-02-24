@@ -59,6 +59,10 @@ db.strategies.insertMany([{
             "low" : "0.8",
             "high" : "2.5"
         },
+        "open_percent" : {
+            "low" : "-2.0",
+            "high" : "3.0"
+        },
         "speed" : {
             "upper_shadow" : "0.2",
             "ratio_l" : "2",
@@ -119,6 +123,8 @@ db.strategies.insertMany([{
         "top_concept" : "3",
         "max_concept" : "8",
         "monitor_count" : "5",
+        "open_min_percent" : "-2.0",
+        "open_max_percent" : "3.0",
         "min_percent" : "0.80",
         "max_percent" : "2.5",
         "volume" : "20000",
