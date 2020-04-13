@@ -130,4 +130,24 @@ db.strategies.insertMany([{
         "volume" : "20000",
         "strategyId" : "5da19b7d181fc3600c5544c3"
     }
+},{
+    "_id" : ObjectId("5da19b7d181fc3600c5544c6"),
+    "name" : "批量异动拉升",
+    "description" : "同时对一组股票进行异动拉升监控",
+    "op" : "buy",
+    "url" : "BatchYdls",
+    "parameters" : {
+        "code" : "",
+        "executeDate" : "",
+        "monitorTime" : {
+            "start" : "00:00",
+            "end" : "23:59"
+        },
+        "desc" : "其它",
+        "strategyId" : "5da19b7d181fc3600c5544c3",
+        "open_percent_low" : "-2.0",
+        "open_percent_high" : "3.5",
+        "max_stock_percent" : "7.0",
+        "volume" : "10000"
+    }
 }]);
